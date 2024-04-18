@@ -7,8 +7,9 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
 import retrofit2.Response
+import javax.inject.Inject
 
-class QuoteRepoImpl(private val quoteRemoteSource: QuoteRemoteSource) : QuoteRepo{
+class QuoteRepoImpl @Inject constructor(private val quoteRemoteSource: QuoteRemoteSource) : QuoteRepo{
     override fun getQuoteList(pageId: String): Flow<List<Result>?>  = quoteRemoteSource.getRemoteQuote(pageId).map {
         it?.results
     }

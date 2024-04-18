@@ -11,12 +11,15 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.mviprojectex1.MainApplication
 import com.example.mviprojectex1.data.repo.QuoteRepo
 import com.example.mviprojectex1.model.MainAppUIState
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class MainViewModel(private val quoteRepo: QuoteRepo) : ViewModel() {
+@HiltViewModel
+class MainViewModel @Inject constructor(private val quoteRepo: QuoteRepo) : ViewModel() {
 
     private val _mutableStateFlow: MutableStateFlow<MainAppUIState> =
         MutableStateFlow(MainAppUIState.Nothing)
@@ -36,15 +39,6 @@ class MainViewModel(private val quoteRepo: QuoteRepo) : ViewModel() {
                     mutableStateFlow.value = MainAppUIState.Success(it)
                 }
 
-        }
-    }
-
-    companion object {
-        val Factory: ViewModelProvider.Factory = viewModelFactory {
-            initializer {
-                val myRepository = (this[APPLICATION_KEY] as MainApplication).quoteRepoImpl
-                MainViewModel(quoteRepo = myRepository)
-            }
         }
     }
 }
