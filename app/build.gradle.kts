@@ -103,6 +103,8 @@ dependencies {
     testImplementation(libs.androidx.core)
     testImplementation(libs.androidx.room.testing)
     testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.androidx.core.testing)
+    testImplementation(libs.turbine)
 
 
     //Android Test Implementation
@@ -121,6 +123,8 @@ dependencies {
     androidTestImplementation(libs.androidx.truth)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.androidx.test.runner)
+    androidTestImplementation(libs.androidx.core.testing)
+
 
     //Debut Implementation
     debugImplementation(libs.androidx.ui.tooling)

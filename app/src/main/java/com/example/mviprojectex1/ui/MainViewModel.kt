@@ -30,7 +30,7 @@ class MainViewModel @Inject constructor(private val quoteRepo: QuoteRepo) : View
         getQuoteListData()
     }
 
-    private fun getQuoteListData() {
+    public fun getQuoteListData() {
         mutableStateFlow.value = MainAppUIState.Loading
         viewModelScope.launch {
             quoteRepo.getQuoteList("1")
