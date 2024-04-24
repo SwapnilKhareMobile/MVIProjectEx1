@@ -4,5 +4,5 @@ sealed class MainAppUIState {
     data object Nothing:MainAppUIState()
     data object Loading:MainAppUIState()
     data object Error:MainAppUIState()
-    class Success(val list: List<Result>?) : MainAppUIState()
+    data class Success(val list: List<Result>?) : MainAppUIState()
 }

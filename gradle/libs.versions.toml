@@ -23,6 +23,8 @@ room = "2.6.1"
 coroutines = "1.7.3"
 androidxTestExt = "1.1.5"
 loggingInterceptor = "5.0.0-alpha.12"
+coreTesting = "2.2.0"
+turbine = "1.1.0"
 
 
 [libraries]
@@ -68,6 +70,8 @@ androidx-test-runner = { module = "androidx.test:runner", version.ref = "android
 androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycleRuntimeKtx" }
 androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycleRuntimeKtx" }
 logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "loggingInterceptor" }
+androidx-core-testing = { group = "androidx.arch.core", name = "core-testing", version.ref = "coreTesting" }
+turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

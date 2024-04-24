@@ -31,6 +31,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.mviprojectex1.model.MainAppUIState
 import com.example.mviprojectex1.model.Result
@@ -38,7 +39,7 @@ import com.example.mviprojectex1.ui.theme.MVIProjectEx1Theme
 
 @Composable
 fun MainAppScreen() {
-    var viewModel: MainViewModel = viewModel(factory = MainViewModel.Factory)
+    var viewModel: MainViewModel = hiltViewModel()
     val appState by viewModel.mutableStateFlow.collectAsState()
     when (appState) {
         MainAppUIState.Error -> TODO()
